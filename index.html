@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start your development with Nitish Kumar landing page.">
+    <meta name="author" content="Nitish Kumar">
+    <title>Nitish Kumar</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!---Header Contents-->
+    <header>
+        <div class="container">
+            <!-- Social Icons and Header Content -->
+            <ul class="socialIcons">
+                <li class="social-item"><a class="social-link" href="#">Phone</a></li>
+                <li class="social-item"><a class="social-link" href="#">Email</a></li>
+                <li class="social-item"><a class="social-link" href="#">Instagram</a></li>
+                <li class="social-item"><a class="social-link" href="#">GitHub</a></li>
+                <li class="social-item"><a class="social-link" href="#">LinkedIn</a></li>
+            </ul>
+            <div id="headerContent" class="montserrat">
+                <div id="headerContentBox">
+                    <h4 class="header-subtitle">Hello, I am</h4>
+                    <h1 class="header-title">Nitish Kumar</h1>
+                    <h6 class="header-mono">Software Engineer | Developer</h6>
+                    <button id="printResume">Print Resume</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!---Main Contents-->
+    <main>
+        <nav id="navBar">
+            <ul id="listLeft" class="navMain">
+                <li><a href="#home" class="nav-link active2" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#resume" class="nav-link" data-section="resume">Resume</a></li>
+            </ul>
+            <ul id="profilePicBox">
+                <img src="Images/NITISH KUMAR PHOTO2.jpg" alt="Nitish Kumar Pic" title="Nitish Kumar Pic" class="profilePic">
+            </ul>
+            <ul id="listRight" class="navMain">
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#blog" class="nav-link" data-section="blog">Blogs</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sections">
+            <!---Home Section-->
+            <section id="home" class="content-section active"> <!-- Active class makes this section visible by default -->
+                <h2>Welcome to my portfolio!</h2>
+                <div>
+                    <h3><b><i>User interface is the process of shifting from chaotic complexity to elegant simplicity.</i></b></h3>
+                </div>
+            </section>
+            <!---About Section-->
+            <section id="about" class="content-section">
+                <h2>About</h2>
+                <p>All about me..</p>
+                <div id="aboutDiv">
+                    <div class="aboutLeft">
+                        <h3>Personal Details-</h3>
+                        That's All about me..
+                    </div>
+                </div>
+            </section>
+            <!---Resume Section-->
+            <section id="resume" class="content-section">
+                <h2>Resume</h2>
+                <div class="resumeBox">
+                    <div class="resume">
+                        <iframe src="https://krnitish769.github.io/CURRICULUM-VITAE/" height="1150px" width="95%" frameborder="0">CURRICULUM-VITAE</iframe>
+                    </div>
+                </div>
+            </section>
+            <!---Projects Section-->
+            <section id="projects" class="content-section">
+                <h2>Projects</h2>
+                <div id="projectsDiv">
+                    <div class="projectContent">
+                        <div id="projectBox1" class="projectBox">
+                            <a href="https://krnitish769.github.io/Clone_Landing_Page-Amazon/" target="_blank"><img src="Images/AmazonClone.png" alt="Amazon's Landing Page Clone" class="projectImage"></a>
+                        </div>
+                        <div id="projectBox2" class="projectBox">
+                            <a href="https://krnitish769.github.io/GameHub/" target="_blank"><img src="Images/GameHub.png" alt="GameHub" class="projectImage"></a>
+                        </div>
+                        <div id="projectBox3" class="projectBox">
+                            <a href="https://krnitish769.github.io/SmartBazar/" target="_blank"><img src="Images/SmartBazar.png" alt="Smart Bazar Online Shopping" class="projectImage"></a>
+                        </div>
+                        <div id="projectBox4" class="projectBox">
+                            <a href="https://bee4bunny.github.io/Arogya_Clinic/" target="_blank"><img src="Images/AarogyaClinic.png" alt="Aarogya Clinic" class="projectImage"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!---Blog Section-->
+            <section id="blog" class="content-section">
+                <h2>My Blogs</h2>
+                <div class="blogContents">
+                    <h1>Here are some posts from my Blog [The Rising Global Tech Capital: INDIA]</h1>
+                    <div class="blogContentsDiv">
+                        <a href="https://krnitish769.blogspot.com/2024/05/the-rising-global-tech-capital-india.html" target="_blank" id="blog4" class="blogs">
+                            <h3>The Rising Global Tech Capital: INDIA</h3>
+                        </a>
+                        <a href="https://krnitish769.blogspot.com/2024/05/indias-contribution-to-open-source.html" target="_blank" id="blog1" class="blogs">
+                            <h3>India's Contribution to Open Source Software</h3>
+                        </a>
+                    </div>
+                    <div class="blogContentsDiv">
+                        <a href="https://krnitish769.blogspot.com/2024/05/the-impact-of-artificial-intelligence.html" target="_blank" id="blog3" class="blogs">
+                            <h3>India's Advances in Artificial Intelligence</h3>
+                        </a>
+                        <a href="https://krnitish769.blogspot.com/2024/05/the-role-of-india-in-global-it-services.html" target="_blank" id="blog2" class="blogs">
+                            <h3>The Role of India in Global IT Services</h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!---Contact Section-->
+            <section id="contact" class="content-section">
+                <h2>Contact Me</h2>
+                <div id="contactDiv">
+                    <div id="contactLeft">
+                        <h3>Social Links:</h3>
+                        <nav id="socialIconsDiv">
+                            <ul>
+                                <li class="socialIcon"><a href="#">icon1</a></li>
+                                <li><a href="#">icon2</a></li>
+                                <li><a href="#">icon3</a></li>
+                                <li><a href="#">icon4</a></li>
+                                <li><a href="#">icon5</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="contactRight">
+                        <h3>Leave Massage:</h3>
+                        <form action="/action_page.php" id="form">
+                            <div id="name">
+                                <input type="text" id="fname" name="fname" placeholder="First Name">
+                                <input type="text" id="lname" name="lname" placeholder="Last Name">
+                            </div>
+                            <input type="text" id="email" name="email" placeholder="Please Enter your Email Address">
+                            <textarea type="text" id="massage" name="massage" placeholder="Type your massage here.." rows="4"></textarea>
+                            <input type="submit" value="SUBMIT" id="submit">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!---Footer Contents-->
+    <footer>
+        <div id="footerMain">
+            ----------| For further information, Contact Me..|---------
+        </div>
+        <div id="footerBottom">
+            <p><span>Made with <i class="fa fa-heart pulse"></i></span> | made by PRABHU!!</p>
+        </div>
+    </footer>
+    <!---Java Scripts-->
+    <script src="myScript.js"></script>
+</body>
+</html>
