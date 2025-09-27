@@ -6,66 +6,94 @@
     <meta name="description" content="Start your development with Nitish Kumar landing page.">
     <meta name="author" content="Nitish Kumar">
     <title>NITISH KUMAR's Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="Images/NitishFavicon2.png">
-    <link rel="stylesheet" href="myStyle.css">
+    <link rel="icon" type="image/x-icon" href="Images/Icons/NitishFavicon2.png">
+    <link rel="stylesheet" href="CSS/MataStyle.css">
+    <link rel="stylesheet" href="CSS/MainStyle.css">
+    <link rel="stylesheet" href="CSS/HeaderFoolterStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+
     <!---Header Contents-->
     <header>
-        <div class="container">
+        <div class="headerMainContainer">
             <!-- Social Icons and Header Content -->
             <ul class="socialIcons">
-                <li class="social-item"><a class="social-link" href="tel:+916295544504" target="_blank">Phone</a></li>
-                <li class="social-item"><a class="social-link" href="mailto:krnitish769@gmail.com" target="_blank">Email</a></li>
-                <li class="social-item"><a class="social-link" href="https://x.com/krnitish769" target="_blank">X</a></li>
-                <li class="social-item"><a class="social-link" href="https://github.com/krnitish769" target="_blank">GitHub</a></li>
-                <li class="social-item"><a class="social-link" href="https://www.linkedin.com/in/krnitish769/" target="_blank">LinkedIn</a></li>
+                <li class="socialItem"><a class="socialLink" href="tel:+916295544504" target="_blank"><img src="Images/Icons/Phone.png" alt="Phone Number" class="socialImage"></a></li>
+                <li class="socialItem"><a class="socialLink" href="mailto:krnitish769@gmail.com" target="_blank"><img src="Images/Icons/Email.png" alt="Email Address" class="socialImage"></a></li>
+                <li class="socialItem"><a class="socialLink" href="https://x.com/krnitish769" target="_blank"><img src="Images/Icons/X.png" alt="X Profile" class="socialImage"></a></li>
+                <li class="socialItem"><a class="socialLink" href="https://github.com/krnitish769" target="_blank"><img src="Images/Icons/Github2.png" alt="GitHub Profile" class="socialImage"></a></li>
+                <li class="socialItem"><a class="socialLink" href="https://www.linkedin.com/in/krnitish769/" target="_blank"><img src="Images/Icons/linkedin.png" alt="LinkedIn Profile" class="socialImage"></a></li>
             </ul>
             <div id="headerContent" class="montserrat">
                 <div id="headerContentBox">
                     <h4 class="header-subtitle">Hello, I am</h4>
-                    <h1 class="header-title">Nitish Kumar</h1>
-                    <h6 class="header-mono">Software Engineer | Developer</h6>
-                    <button id="printResume">Download Resume</button>
+                    <h1 class="header-title">Nitish <span style="color:rgb(255, 149, 0);">Kumar</span></h1>
+                    <div class="headerMono">
+                        <h5 class="header-mono1">Software Engineer</h5>
+                        <h6 class="header-pipe">|</h6>
+                        <h5 class="header-mono2">Developer</h5>
+                    </div>
+                    <div id="downloadResumeBox">
+                        <button id="downloadResume" class="downloadResume">
+                        <a href="https://www.dropbox.com/scl/fi/z7w25f536dfudsifw3dmg/Nitish_Kumar_CV.pdf?rlkey=mozbnkntzr5kegjmy7dcw2dlg&st=8dw5xdi5&dl=1" target="_blank">
+                            Download Resume
+                        </a>
+                    </button>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
     <!---Main Contents-->
     <main>
-        <nav id="navBar">
-            <ul id="listLeft" class="navMain">
-                <li><a href="#home" class="nav-link active2" data-section="home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#resume" class="nav-link" data-section="resume">Resume</a></li>
-            </ul>
-            <ul id="profilePicBox">
-                <img src="Images/NITISH KUMAR PHOTO2.jpg" alt="Nitish Kumar Pic" title="Nitish Kumar Pic" class="profilePic">
-            </ul>
-            <ul id="listRight" class="navMain">
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#blog" class="nav-link" data-section="blog">Blogs</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        <nav id="navBar" class="navBar">
+            <ul class="navMain">
+                <li><a href="#homeDiv" class="nav-link">Home</a></li>
+                <li><a href="#aboutDiv" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link resumeButton" id="resumeDivClicker">Resume</a></li>
+
+                <li id="profilePicBox">
+                    <a href="#">
+                        <img src="Images/NITISH KUMAR PHOTO.jpg" alt="Nitish Kumar Pic" title="Nitish Kumar Pic" id="profilePic" class="profilePic">
+                    </a>                    
+                </li>
+
+                <li><a href="#projectsDiv" class="nav-link">Projects</a></li>
+                <li><a href="#blogsDiv" class="nav-link">Blogs</a></li>
+                <li><a href="#contactDiv" class="nav-link">Contact</a></li>
             </ul>
         </nav>
         
         <div class="sections">
             <!---Home Section-->
-            <section id="home" class="content-section active"> <!-- Active class makes this section visible by default -->
-                <h2>Welcome to my portfolio!</h2>
+            <section id="homeDiv" class="content-section active"> <!-- Active class makes this section visible by default -->
                 <div>
-                    <h3><b><i>Home Page Is Under Development..</i></b></h3>
+                    <h2 class="headings">Welcome to my portfolio!</h2>
+                </div>
+                <div class="quote-box">
+                    <blockquote class="quote-text">“Reusability is key in reducing bugs and coding quickly. 
+                        The more I use a piece of code, the more confident and 
+                        familiar I become with it, which in turn significantly 
+                        speeds up my development time.”
+                    </blockquote>
+
                 </div>
             </section>
             <!---About Section-->
-            <section id="about" class="content-section">
-                <h2>About</h2>
+            <section id="aboutDiv" class="content-section">
+                <div class="headingBox">
+                    <h2 class="headings">About</h2>
+                </div>
                 <p>All about me..</p>
-                <div id="aboutDiv">
+                <div class="about">
                     <div class="aboutLeft">
                         <h3>Personal Details-</h3>
                         That's All about me..
@@ -73,8 +101,10 @@
                 </div>
             </section>
             <!---Resume Section-->
-            <section id="resume" class="content-section">
-                <h2>Resume</h2>
+            <section id="resumeDiv" class="content-section">
+                <div id ="resumeHeadingBox" class="resumeHeadingBox">
+                    <h2 class="resumeHeading">Resume ▼</h2>
+                </div>
                 <div class="resumeBox">
                     <div class="resume">
                         <iframe src="https://krnitish769.github.io/CURRICULUM-VITAE/" height="1150px" width="95%" frameborder="0">CURRICULUM-VITAE</iframe>
@@ -82,32 +112,57 @@
                 </div>
             </section>
             <!---Projects Section-->
-            <section id="projects" class="content-section">
-                <h2>Projects</h2>
-                <div id="projectsDiv">
+            <section id="projectsDiv" class="content-section">
+                <div class="headingBox">
+                    <h2 class="headings">Projects</h2>
+                </div>
+                <div id="projects">
                     <div class="projectContent">
+                        
                         <div id="projectBox1" class="projectBox">
-                            <a href="https://github.com/krnitish769/VOC_DRONE" target="_blank"><img src="Images/VOC-Drone.png" alt="VOC-Drone's git repository" class="projectImage"></a>
+                            <a href="https://krnitish769.github.io/GameHub/" target="_blank"><img src="Images/GameHub.png" alt="GameHub" class="projectImage"></a>
+                            <div id="project1Text" class="projectTexts">
+                                <h3>GameHub</h3>
+                                <p>A gaming website where you can find various games to play online. It offers a wide range of games, including action, adventure, puzzle, and more. The website is designed to provide an enjoyable gaming experience for users of all ages.</p>
+                            </div>
                         </div>
                         <div id="projectBox2" class="projectBox">
-                            <a href="https://krnitish769.github.io/GameHub/" target="_blank"><img src="Images/GameHub.png" alt="GameHub" class="projectImage"></a>
+                            <div id="project2Text" class="projectTexts">
+                                <h3>VOC-Drone</h3>
+                                <p>A drone project that utilizes computer vision to detect and recognize objects in real-time. The drone is equipped with a camera and uses machine learning algorithms to identify and classify objects, making it suitable for various applications such as surveillance, search and rescue, and environmental monitoring.</p>
+                            </div>
+                            <a href="https://github.com/krnitish769/VOC_DRONE" target="_blank"><img src="Images/VOC-Drone.png" alt="VOC-Drone's git repository" class="projectImage"></a>
                         </div>
                         <div id="projectBox3" class="projectBox">
-                            <a href="https://krnitish769.github.io/Clone_Landing_Page-Amazon/" target="_blank"><img src="Images/AmazonClone.png" alt="Amazon's Landing Page Clone" class="projectImage"></a>
+                            <a href="https://krnitish769.github.io/SmartBazar/" target="_blank"><img src="Images/SmartBazar.png" alt="Smart Bazar Online Shopping" class="projectImage"></a>
+                            <div id="project3Text" class="projectTexts">
+                                <h3>Smart Bazar</h3>
+                                <p>Smart Bazar is an online shopping website that offers a wide range of products, including electronics, fashion, home goods, and more. The website is designed to provide a convenient and user-friendly shopping experience, with features such as product search, filtering, and secure checkout.</p>
+                            </div>
                         </div>
                         <div id="projectBox4" class="projectBox">
-                            <a href="https://krnitish769.github.io/SmartBazar/" target="_blank"><img src="Images/SmartBazar.png" alt="Smart Bazar Online Shopping" class="projectImage"></a>
+                            <div id="project4Text" class="projectTexts">
+                                <h3>Amazon Clone</h3>
+                                <p>A clone of Amazon's landing page, designed to replicate the look and feel of the original site. The clone includes features such as product listings, search functionality, and a shopping cart. It is built using HTML, CSS, and JavaScript to provide a seamless user experience.</p>
+                            </div>
+                            <a href="https://krnitish769.github.io/Clone_Landing_Page-Amazon/" target="_blank"><img src="Images/AmazonClone.png" alt="Amazon's Landing Page Clone" class="projectImage"></a>
                         </div>
                         <div id="projectBox5" class="projectBox">
                             <a href="https://bee4bunny.github.io/Arogya_Clinic/" target="_blank"><img src="Images/AarogyaClinic.png" alt="Aarogya Clinic" class="projectImage"></a>
+                            <div id="project5Text" class="projectTexts">
+                                <h3>Aarogya Clinic</h3>
+                                <p>Aarogya Clinic is a healthcare website that provides information about various medical services and treatments. The website is designed to help patients find the right healthcare provider and book appointments online. It also includes features such as health tips, articles, and a blog to promote wellness and healthy living.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!---Blog Section-->
-            <section id="blog" class="content-section">
-                <h2>My Blogs</h2>
-                <div class="blogContents">
+            <section id="blogsDiv" class="content-section">
+                <div class="headingBox">
+                    <h2 class="headings">My Blogs</h2>
+                </div>
+                <div class="blogContentsMainBox">
                     <h1>Here are some posts from my Blog [The Rising Global Tech Capital: INDIA]</h1>
                     <div class="blogContentsDiv">
                         <a href="https://krnitish769.blogspot.com/2024/05/the-rising-global-tech-capital-india.html" target="_blank" id="blog4" class="blogs">
@@ -128,9 +183,11 @@
                 </div>
             </section>
             <!---Contact Section-->
-            <section id="contact" class="content-section">
-                <h2>Contact Me</h2>
-                <div id="contactDiv">
+            <section id="contactDiv" class="content-section">
+                <div class="headingBox">
+                    <h2 class="headings">Contact Me</h2>
+                </div>
+                <div id="contactMainDiv">
                     <div id="contactLeft">
                         <h3>Social Links:</h3>
                         <nav id="socialIconsDiv">
@@ -144,7 +201,7 @@
                         </nav>
                     </div>
                     <div id="contactRight">
-                        <h3>Leave Massage:</h3>
+                        <h3 class="headings">Leave Massage:</h3>
                         <form action="/action_page.php" id="form">
                             <div id="name">
                                 <input type="text" id="fname" name="fname" placeholder="First Name">
@@ -159,6 +216,7 @@
             </section>
         </div>
     </main>
+
     <!---Footer Contents-->
     <footer>
         <div id="footerMain">
@@ -168,7 +226,10 @@
             <p><span>Made with <i class="fa fa-heart pulse"></i></span> | made by PRABHU!!</p>
         </div>
     </footer>
+
     <!---Java Scripts-->
     <script src="myScript.js"></script>
+
 </body>
+
 </html>
