@@ -173,19 +173,76 @@ typeWriterLoop();
 // Resume Section Toggle Switch
 // -----------------------------------------------------------------
 
-const heading = document.getElementById("resumeHeading")[0];
-const heading2 = document.getElementsByClassName("resumeButton")[0];
-const content = document.querySelector(".resumeBox")[0]; // use class selector
-const headingText = document.querySelector(".resumeHeading")[0];
+document.addEventListener("DOMContentLoaded", () => {
+  const navSwitch     = document.getElementById("resumeDivClicker");   // navbar control
+  const headingBox    = document.getElementById("resumeHeadingBox");   // clickable heading container
+  const headingH2     = document.querySelector(".resumeHeading");      // the H2 text
+  const resumeBox     = document.querySelector(".resumeBox");          // the collapsible content
+  const resumeSection = document.getElementById("resumeDiv");          // section to scroll to
 
-heading.addEventListener("click", () => {
-  content.classList.toggle("show");
+  // sanity check
+  if (!headingBox || !headingH2 || !resumeBox) {
+    console.error("Resume toggle elements missing:", {
+      headingBox, headingH2, resumeBox, navSwitch, resumeSection
+    });
+    return;
+  }
 
-  if (content.classList.contains("show")) {
-    headingText.innerHTML = "Resume ▲";
-    content.style.display = "flex";
-  } else {
-    headingText.innerHTML = "Resume ▼";
-    content.style.display = "none";
+  // Helper: show (idempotent)
+  function showResume() {
+    resumeBox.classList.add("show");
+    headingH2.textContent = "Resume ▲";
+    headingBox.classList.add("hide");   // ✅ fixed: use classList
+    headingH2.classList.remove("bubble");
+    headingBox.classList.remove("resumeHeadingBox");
+    headingBox.classList.add("headingBox");
+  }
+
+  // Helper: hide (idempotent)
+  function hideResume() {
+    resumeBox.classList.remove("show");
+    headingH2.textContent = "Resume ▼";
+    headingBox.classList.remove("hide"); // remove hidden <p> when closed
+    headingH2.classList.add("bubble");
+    headingBox.classList.remove("headingBox");
+    headingBox.classList.add("resumeHeadingBox");
+  }
+
+  // Toggle
+  function toggleResume() {
+    if (resumeBox.classList.contains("show")) {
+      hideResume();
+    } else {
+      showResume();
+    }
+  }
+
+  // Initial state: make heading pulse if hidden
+  if (!resumeBox.classList.contains("show")) {
+    headingH2.classList.add("bubble");
+  }
+
+  // Heading click toggles
+  headingBox.addEventListener("click", () => {
+    toggleResume();
+  });
+
+  // Nav click: scroll then open (idempotent)
+  if (navSwitch) {
+    navSwitch.addEventListener("click", (e) => {
+      e.preventDefault?.();
+
+      // Scroll to the section first
+      if (resumeSection) {
+        resumeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        headingBox.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Delay so scroll happens first
+      setTimeout(() => {
+        showResume(); // always open from navbar
+      }, 150);
+    });
   }
 });

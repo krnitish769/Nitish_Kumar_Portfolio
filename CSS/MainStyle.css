@@ -137,7 +137,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: black;
+    box-shadow: 30px 10px 30px rgba(0,0,0,0.70);
     width: 100%;
     margin-top: 0px;
 }
@@ -233,12 +235,39 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 3rem 0rem 5rem;
 
     cursor: pointer;
-    border-bottom:10px solid #E8630A;
+    border-top:5px solid black;
+    border-bottom: 5px solid black;
     background-color: #E8630A;
+
+    p {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.699);
+        padding: 5px 10px;
+        border-radius: 10px;
+        margin-bottom: 2px;
+    }
+}
+#resumeHeadingBox.hide p {
+  display: none;
+}
+
+/* When opened → same style as other headings */
+#resumeHeadingBox.open p {
+  display: none; /* hide helper text */
+}
+
+#resumeHeadingBox.open .resumeHeading {
+  animation: none;        /* stop bubble */
+  background-color: white; /* same as others */
+  color: black;
+  border: 2px solid black; /* same as others */
 }
 .resumeHeading {
     font-size: 2.5rem;
@@ -267,9 +296,10 @@ main {
     height: fit-content;
     width: 100%;
     background-color: #ffea003d;
-    display: none; /* Hidden by default */
     justify-content: center;
     padding: 10px 0px;
+
+    display: none; /* Hidden by default */
 }
 .resumeBox.show {
   display: flex; /* Show when 'show' class is added */
