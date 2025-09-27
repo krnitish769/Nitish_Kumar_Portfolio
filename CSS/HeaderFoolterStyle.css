@@ -1,0 +1,174 @@
+/* Header Content */
+header {
+    height: 30rem;
+    color: white;
+    background-color: rgba(250, 235, 215, 0.245);
+    background-image: url("../Images/BgImage.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    text-shadow: 2px 2px 4px black;
+}
+.headerMainContainer {
+    height: 18rem;
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+            list-style: none;
+            display: inline;
+            padding: 15px 15px;
+            border-radius: 5px;
+            a {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}
+.socialIcons {
+    margin-top: 3px;
+    margin-right: 1vw;
+}
+.socialItem {
+    margin-right: 10px;
+}   
+.socialImage, .socialLink {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
+.socialItem:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.5);
+}
+
+/* Header Main Contents */
+#headerContent {
+    height: 23rem;
+    margin-left: 20rem;
+    font-size: large;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    h4{
+        font-size: large;
+    }
+    h1{
+        font-size: 500%;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    h6{
+        font-size: larger;
+    }
+}
+
+/* Title Part */
+.headerMono {
+    display: flex;
+    justify-content: left ; /* center the entire line */
+    align-items: center;
+    font-family: 'VT323', sans-serif;
+    font-size: 1.5rem;
+}
+
+.headerMono h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: larger;
+}
+
+/* Reserve final width to prevent shifting */
+.header-mono1 {
+    width: 17ch; /* adjust to length of "Software Engineer" */
+}
+
+.header-mono2 {
+    width: 9ch;  /* adjust to length of "Developer" */
+    margin-left: 15px;
+}
+
+/* Pipe stays fixed */
+/* .header-pipe {
+    width: 1ch; 
+    text-align: center;
+} */
+
+/* Optional: cursor animation */
+@keyframes blink {
+    0%, 50%, 100% { border-color: transparent; }
+    25%, 75% { border-color: transparent; }
+}
+
+.header-mono1 {
+    animation: blink 1s step-end infinite;
+}
+.header-mono2 {
+    animation: blink 1.8s step-end infinite;
+}
+
+
+/* Animated class */
+.animate-text {
+  animation: slideIn 0.8s forwards; /* duration 0.8s, forwards keeps final state */
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Download Resume Part */
+#downloadResumeBox {
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 10px 30px 0px;
+}
+.downloadResume {
+    background-color: rgb(230, 134, 0);
+    font-size: large;
+    padding: 3px 7px 2px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.downloadResume.clicked {
+    background-color: white;
+    color: black;
+    pointer-events: none;
+}
+#downloadResumeBox:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+.downloadResume:active {
+    background-color: rgba(209, 209, 209, 0.705);
+    transition: all 0.1s ease-in-out;
+}
+
+/* ------------------------------------------------------------ */
+/* Footer Content */
+
+footer {
+    height: 5rem;
+    color: white;
+    background-color: rgb(0, 15, 54);
+    text-align: center;
+}
+#footerMain {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footerBottom {
+    height: 1rem;
+    background-color: rgb(0, 9, 31);
+    padding: 2px;
+}
+/* ------------------------------------------------------------- */
