@@ -36,6 +36,16 @@ main {
     transform: scale(1.05);
     border-bottom: #ff5722 3px solid;
 }
+#resumeDivClicker:hover {
+    padding-bottom: 1px;
+    color: #ff5722;
+    transform: scale(1.05);
+    border-bottom: #ff5722 3px solid;
+}
+#resumeDivClicker {
+    cursor: pointer;
+    color: black;
+}
 
 /* Profile Picture - initially centered */
 #profilePicBox {
@@ -219,11 +229,48 @@ main {
     align-items: center;
 }
 .about {
-    height: 40rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    height: 50rem;
+}
+
+.education {
+    color: black;
+    height: 20rem;
+    width: 80vw;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.aboutPersonal h2 {
+    font-size: 2rem;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.393);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+.education ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        height: 15rem;
+        width: 35rem;
+        color: white;
+        background-color: #101313e3;
+        border-radius: 20px;
+        list-style: none;
+    }
 }
 
 /* Resume */
