@@ -1,4 +1,69 @@
 // ---------------------------------------------------------------
+// Header Background Animation
+// ---------------------------------------------------------------
+const bgContainer = document.getElementById("bgContainer");
+
+const bgImages = [
+  "../Images/BgImage.jpg",
+  "Images/Bg2.jpg",
+  "Images/Bg3.jpg",
+  "Images/Bg4.jpg",
+  "Images/Bg5.jpg"
+];
+
+let current = 0;
+
+// --- Different animation types ---
+const animations = ["fade", "split", "tiles"];
+
+// Main background change function
+function changeBackground() {
+  const type = animations[Math.floor(Math.random() * animations.length)];
+  const nextImage = bgImages[current];
+  current = (current + 1) % bgImages.length;
+
+  if (type === "tiles") {
+    createTilesEffect(nextImage);
+  } else {
+    const newBg = document.createElement("div");
+    newBg.classList.add("bgImage");
+    newBg.style.backgroundImage = `url(${nextImage})`;
+    bgContainer.appendChild(newBg);
+
+    if (type === "fade") newBg.classList.add("fade-in");
+    if (type === "split") newBg.classList.add("split-enter");
+
+    // Remove old images smoothly
+    setTimeout(() => {
+      const all = bgContainer.querySelectorAll(".bgImage");
+      if (all.length > 1) all[0].remove();
+    }, 1500);
+  }
+}
+
+// Create Mosaic (Tiles) animation
+function createTilesEffect(img) {
+  bgContainer.innerHTML = "";
+  const grid = document.createElement("div");
+  grid.classList.add("tilesContainer");
+  for (let i = 0; i < 60; i++) {
+    const tile = document.createElement("div");
+    tile.classList.add("tile");
+    tile.style.backgroundImage = `url(${img})`;
+    tile.style.animationDelay = `${Math.random()}s`;
+    grid.appendChild(tile);
+  }
+  bgContainer.appendChild(grid);
+
+  // remove tiles after 1.5s
+  setTimeout(() => { bgContainer.innerHTML = ""; }, 1500);
+}
+
+// Initialize and run every 7 seconds
+changeBackground();
+setInterval(changeBackground, 7000);
+
+// ---------------------------------------------------------------
 // Download Resume Button Animation
 // ---------------------------------------------------------------
 const btn = document.getElementById("downloadResume");
@@ -246,3 +311,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ---------------------------------------------------------------

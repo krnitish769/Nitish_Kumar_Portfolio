@@ -21,7 +21,10 @@
 <body>
 
     <!---Header Contents-->
-    <header>
+    <header id="animatedHeader">
+
+        <div id="bgContainer"></div> <!-- 🔥 Animation Layer -->
+
         <div class="headerMainContainer">
             <!-- Social Icons and Header Content -->
             <ul class="socialIcons">
@@ -56,19 +59,19 @@
     <main>
         <nav id="navBar" class="navBar">
             <ul class="navMain">
-                <li><a href="#homeDiv" class="nav-link">Home</a></li>
-                <li><a href="#aboutDiv" class="nav-link">About</a></li>
+                <li><a href="#homeDiv" class="nav-link exception">Home</a></li>
+                <li><a href="#aboutDiv" class="nav-link exception">About</a></li>
                 <li><span id="resumeDivClicker" class="nav-link resumeButton">Resume</span></li>
 
                 <li id="profilePicBox">
                     <a href="#">
-                        <img src="Images/NITISH KUMAR PHOTO.jpg" alt="Nitish Kumar Pic" title="Nitish Kumar Pic" id="profilePic" class="profilePic">
+                        <img src="Images/NITISH KUMAR Profile Pic.jpg" alt="Nitish Kumar Pic" title="Nitish Kumar Pic" id="profilePic" class="profilePic">
                     </a>                    
                 </li>
 
-                <li><a href="#projectsDiv" class="nav-link">Projects</a></li>
-                <li><a href="#blogsDiv" class="nav-link">Blogs</a></li>
-                <li><a href="#contactDiv" class="nav-link">Contact</a></li>
+                <li><a href="#projectsDiv" class="nav-link exception">Projects</a></li>
+                <li><a href="#blogsDiv" class="nav-link exception">Blogs</a></li>
+                <li><a href="#contactDiv" class="nav-link exception">Contact</a></li>
             </ul>
         </nav>
         
@@ -79,10 +82,13 @@
                     <h2 class="headings">Welcome to my portfolio!</h2>
                 </div>
                 <div class="quote-box">
-                    <blockquote class="quote-text">“Reusability is key in reducing bugs and coding quickly. 
-                        The more I use a piece of code, the more confident and 
-                        familiar I become with it, which in turn significantly 
-                        speeds up my development time.”
+                    <blockquote class="quote-text">
+                        The only secret of the speed of my Development is,
+                        <br>
+                        The more I use a piece of code,
+                        <br>
+                        The more confident and 
+                        familiar I become with it..
                     </blockquote>
 
                 </div>
@@ -95,24 +101,31 @@
 
                 <div class="about">
 
-                    <div class="educational">
+                    <div class="aboutEducational">
                         <h2 class="aboutHeadings">Educational Details:</h2>
                         <ul>
-                            <li>
-                                <strong>Bachelor of Technology in Computer Science and Engineering</strong>
-                                <em>(Board:- <b>M. A. K. A. U. T. </b>)</em>
-                                <br>
-                                <em>D. I. A. T. M, Rajbandh (West Bengal)</em>
+                            <li class="Bachelor">
+                                <a href="https://diatm.rahul.ac.in/web/" alt="Click to open College Website" target="_blank">
+                                    <strong>Bachelor of Technology in Computer Science and Engineering</strong>
                                     <br>
-                                2022 -> 2025
+                                    <em>D. I. A. T. M, Rajbandh (West Bengal)</em>
+                                    <br>
+                                    <em>(Board:- <b>M. A. K. A. U. T. </b>)</em>
+                                    <br>
+                                    <em>2022 -> 2025</em>
+                                </a>
                             </li>
-                            <li>
-                                <strong>Diploma in Engineering in Electronics & Instrumentation Engineering</strong>
-                                <em>(Board:- <b>W. B. S. C. T. E. </b>)</em>
-                                <br>
-                                <em>H. B. I. T. M, Raniganj (West Bengal)</em>
+                            ---------------------------------------&rarr;
+                            <li class="Diploma">
+                                <a href="https://polytechnic.wbtetsd.gov.in/hbitmraniganj" alt="Click to open College Website" target="_blank">
+                                    <strong>Diploma in Engineering in Electronics & Instrumentation Engineering</strong>
                                     <br>
-                                2019 -> 2022
+                                    <em>H. B. I. T. M, Raniganj (West Bengal)</em>
+                                    <br>
+                                    <em>(Board:- <b>W. B. S. C. T. E. </b>)</em>
+                                    <br>
+                                    <em>2019 -> 2022</em>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -128,8 +141,8 @@
             <section id="resumeDiv" class="content-section">
                 <div id ="resumeHeadingBox" class="resumeHeadingBox">
                     <p>Here's my CV (Website) Only using HTML</p>
-                    <p>Please Click to View</p>
                     <h2 class="resumeHeading">Resume ▼</h2>
+                    <p>Please Click to View</p>
                 </div>
                 <div class="resumeBox">
                     <div class="resume">
@@ -146,7 +159,7 @@
                     <div class="projectContent">
                         
                         <div id="projectBox1" class="projectBox">
-                            <a href="https://krnitish769.github.io/GameHub/" target="_blank"><img src="Images/GameHub.png" alt="GameHub" class="projectImage"></a>
+                            <a href="https://krnitish769.github.io/GameHub/" target="_blank"><img src="Images/ProjectsBG/GameHub.png" alt="GameHub" class="projectImage"></a>
                             <div id="project1Text" class="projectTexts">
                                 <h3>GameHub</h3>
                                 <p>A gaming website where you can find various games to play online. It offers a wide range of games, including action, adventure, puzzle, and more. The website is designed to provide an enjoyable gaming experience for users of all ages.</p>
@@ -157,10 +170,10 @@
                                 <h3>VOC-Drone</h3>
                                 <p>A drone project that utilizes computer vision to detect and recognize objects in real-time. The drone is equipped with a camera and uses machine learning algorithms to identify and classify objects, making it suitable for various applications such as surveillance, search and rescue, and environmental monitoring.</p>
                             </div>
-                            <a href="https://github.com/krnitish769/VOC_DRONE" target="_blank"><img src="Images/VOC-Drone.png" alt="VOC-Drone's git repository" class="projectImage"></a>
+                            <a href="https://github.com/krnitish769/VOC_DRONE" target="_blank"><img src="Images/ProjectsBG/VOC-Drone.png" alt="VOC-Drone's git repository" class="projectImage"></a>
                         </div>
                         <div id="projectBox3" class="projectBox">
-                            <a href="https://krnitish769.github.io/SmartBazar/" target="_blank"><img src="Images/SmartBazar.png" alt="Smart Bazar Online Shopping" class="projectImage"></a>
+                            <a href="https://krnitish769.github.io/SmartBazar/" target="_blank"><img src="Images/ProjectsBG/SmartBazar.png" alt="Smart Bazar Online Shopping" class="projectImage"></a>
                             <div id="project3Text" class="projectTexts">
                                 <h3>Smart Bazar</h3>
                                 <p>Smart Bazar is an online shopping website that offers a wide range of products, including electronics, fashion, home goods, and more. The website is designed to provide a convenient and user-friendly shopping experience, with features such as product search, filtering, and secure checkout.</p>
@@ -171,10 +184,10 @@
                                 <h3>Amazon Clone</h3>
                                 <p>A clone of Amazon's landing page, designed to replicate the look and feel of the original site. The clone includes features such as product listings, search functionality, and a shopping cart. It is built using HTML, CSS, and JavaScript to provide a seamless user experience.</p>
                             </div>
-                            <a href="https://krnitish769.github.io/Clone_Landing_Page-Amazon/" target="_blank"><img src="Images/AmazonClone.png" alt="Amazon's Landing Page Clone" class="projectImage"></a>
+                            <a href="https://krnitish769.github.io/Clone_Landing_Page-Amazon/" target="_blank"><img src="Images/ProjectsBG/AmazonClone.png" alt="Amazon's Landing Page Clone" class="projectImage"></a>
                         </div>
                         <div id="projectBox5" class="projectBox">
-                            <a href="https://bee4bunny.github.io/Arogya_Clinic/" target="_blank"><img src="Images/AarogyaClinic.png" alt="Aarogya Clinic" class="projectImage"></a>
+                            <a href="https://bee4bunny.github.io/Arogya_Clinic/" target="_blank"><img src="Images/ProjectsBG/AarogyaClinic.png" alt="Aarogya Clinic" class="projectImage"></a>
                             <div id="project5Text" class="projectTexts">
                                 <h3>Aarogya Clinic</h3>
                                 <p>Aarogya Clinic is a healthcare website that provides information about various medical services and treatments. The website is designed to help patients find the right healthcare provider and book appointments online. It also includes features such as health tips, articles, and a blog to promote wellness and healthy living.</p>

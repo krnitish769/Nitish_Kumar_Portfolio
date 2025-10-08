@@ -3,7 +3,7 @@ header {
     height: 30rem;
     color: white;
     background-color: rgba(250, 235, 215, 0.245);
-    background-image: url("../Images/BgImage.jpg");
+    background-image: url("../Images/HeaderBG/BgImage1.jpg");
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -150,6 +150,64 @@ header {
     background-color: rgba(209, 209, 209, 0.705);
     transition: all 0.1s ease-in-out;
 }
+
+/* Backgound Animation Layer */
+
+/* Background Animation Container */
+#bgContainer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Common background image layer */
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Fade in/out */
+.bgImage.fade-in { opacity: 1; }
+
+/* Split animation (left-right) */
+.split-enter {
+  transform: translateX(-100%);
+  animation: splitSlide 1s forwards;
+}
+@keyframes splitSlide {
+  to { transform: translateX(0); }
+}
+
+/* Tiles animation (mosaic reveal) */
+.tilesContainer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.tile {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: tileShow 0.8s forwards;
+}
+@keyframes tileShow {
+  from {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
 
 /* ------------------------------------------------------------ */
 /* Footer Content */

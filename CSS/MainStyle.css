@@ -34,6 +34,8 @@ main {
     padding-bottom: 1px;
     color: #ff5722;
     transform: scale(1.05);
+}
+.exception:hover {
     border-bottom: #ff5722 3px solid;
 }
 #resumeDivClicker:hover {
@@ -215,7 +217,8 @@ main {
 
   .quote-text {
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.7;
+    word-spacing: 2px;
     color: #fff;
     font-weight: 500;
   }
@@ -224,28 +227,82 @@ main {
 #aboutDiv {
     height: 60rem;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
 }
 .about {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: 50rem;
-}
-
-.education {
-    color: black;
-    height: 20rem;
-    width: 80vw;
-    margin-top: 2rem;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
+
+.aboutEducational {
+    color: black;
+    height: 30rem;
+    width: 80vw;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        li {
+            height: 18rem;
+            width: 30rem;
+            list-style: none;
+            border-radius: 10px;
+            a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-size: larger;
+                padding: 10px;
+                border-radius: 10px;
+                border: 2px solid black;
+                strong {
+                    width: 100%;
+                    padding: 0px 10px;
+                    font-size: x-large;
+                    text-align: center;
+                    font-size: 2rem;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+                }
+                em {
+                    color: black;
+                    background-color: rgba(255, 255, 255, 0.541);
+                    padding: 3px 10px;
+                    border-radius: 10px;
+                    border: 1px solid yellow;
+                }            
+            }           
+        }
+    }
+    h2 {
+        font-size: 2rem;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.393);
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin: 5px 0px;
+    }
+}
+.Bachelor {
+    background-image: url("../Images/AboutBG/DIATM.jpg");
+    background-size: cover;
+}
+.Diploma {
+    background-image: url("../Images/AboutBG/HBITM.jpg");
+    background-size: cover;
+}
+
 .aboutPersonal h2 {
     font-size: 2rem;
     color: black;
@@ -272,6 +329,9 @@ main {
         list-style: none;
     }
 }
+.aboutPersonal {
+    height: 30rem;
+}
 
 /* Resume */
 
@@ -286,11 +346,9 @@ main {
     width: 100%;
     margin-top: 0px;
     margin-bottom: 10px;
-    padding: 3rem 0rem 5rem;
-
+    padding: 2rem 0rem 2rem;
     cursor: pointer;
-    border-top:5px solid black;
-    border-bottom: 5px solid black;
+    border-top:3px dashed black;
     background-color: #E8630A;
 
     p {
@@ -298,7 +356,8 @@ main {
         background-color: rgba(0, 0, 0, 0.699);
         padding: 5px 10px;
         border-radius: 10px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        margin-top: 5px;
     }
 }
 #resumeHeadingBox.hide p {
@@ -358,7 +417,7 @@ main {
     padding: 0px;
     margin: 10px;
     background-color: #f4f4f4;
-    border: 2px solid black;
+    border: 2px dotted black;
 }
 
 /* Projects */
@@ -427,7 +486,8 @@ main {
 
 /* Blog */
 #blogsDiv {
-    background-color: #E8630A;
+    background-image: url("../Images/SectionBG/7.jpg");
+    background-size: cover;
 }
 .blogContentsMainBox {
     color: black;
@@ -446,7 +506,7 @@ main {
     }
 }
 .blogContentsDiv {
-    background-color: #E8630A;
+    background-color: transparent;
     width: 80rem;
     padding: 3rem;
     display: flex;
@@ -457,7 +517,7 @@ main {
     color: white;
     height: 20rem;
     width: 20rem;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 10%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.763);
     display: flex;
@@ -482,19 +542,19 @@ main {
     scale: 1.2;
 }
 #blog1 {
-    background-image: url("../Images/blog1.png");
+    background-image: url("../Images/BlogsBG/blog1.png");
     background-size: cover;
 }
 #blog2 {
-    background-image: url("../Images/blog2.png");
+    background-image: url("../Images/BlogsBG/blog2.png");
     background-size: cover;
 }
 #blog3 {
-    background-image: url("../Images/blog3.jpeg");
+    background-image: url("../Images/BlogsBG/blog3.jpeg");
     background-size: cover;
 }
 #blog4 {
-    background-image: url("../Images/blog4.png");
+    background-image: url("../Images/BlogsBG/blog4.png");
     background-size: cover;
 }
 
@@ -502,9 +562,11 @@ main {
 #contactDiv {
     color: white;
     height: 30rem;
-    background-color: #af4300;
+    background-image: url("../Images/SectionBackground/Contact3.jpg");
+    background-size: contain;
+    background-position: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
