@@ -21,32 +21,44 @@ main {
     align-items: center;
     list-style: none;
     li{
-        font-size: larger;
+        font-size: x-large;
         a {
-        color: black;
-        text-decoration: none;
-        transition: color 0.3s ease;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 450;
         }
     }    
 }
+/* .nav-link:hover,
+.nav-link.active2 {
+    font-weight: bold;
+} */
+/* All Nav List Items Hover and Active Effects */
 .navMain li a:hover,
 .navMain li a.active2 {
-    padding-bottom: 1px;
     color: #ff5722;
     transform: scale(1.05);
 }
-.exception:hover {
+/* Except Profile Pic */
+.exception a:hover,
+.exception a.active2 {
+    padding-bottom: 1px;
     border-bottom: #ff5722 3px solid;
+}
+/* For Resume Nav List Item Only */
+#resumeDivClicker {
+    cursor: pointer;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
 }
 #resumeDivClicker:hover {
     padding-bottom: 1px;
     color: #ff5722;
     transform: scale(1.05);
     border-bottom: #ff5722 3px solid;
-}
-#resumeDivClicker {
-    cursor: pointer;
-    color: black;
 }
 
 /* Profile Picture - initially centered */
@@ -116,6 +128,7 @@ main {
         opacity: 0;
         transform: translateY(-5px);
         animation: fadeIn 0.1s forwards;
+        font-size: larger;
     }
 }
 
@@ -582,7 +595,7 @@ main {
     justify-content: space-evenly;
 }
 #contactLeft {
-    height: 16rem;
+    height: 17rem;
     width: 35%;
     border: 1px solid transparent;
     border-radius: 20px;
@@ -623,22 +636,26 @@ main {
         }
     }
 }
+.socialIcon {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.socialIcon:hover {
+    font-size: larger;
+}
 
 #contactRight {
-    height: 16rem;
+    height: 17rem;
     width: 30%;
     border: 1px solid black;
     border-radius: 20px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
     h3 {
         height: 2rem;
-        padding: 3px 15px;
+        margin-bottom:20px;
     }
 }
-#form {
+#contactForm {
     height: 11rem;
     scale: 1.2;
     display: flex;
@@ -647,22 +664,26 @@ main {
     align-items: center;
 }
 #name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 80%;
     margin-bottom: 0px;
     display: flex;
     justify-content: space-between;
 }
 #fname {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 48%;
     margin-left: 0px;
 }
 #lname {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 48%;
 }
 #email {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 80%;
 }
-#massage {
+#message {
     height: 4rem;
     width: 80%;
 }

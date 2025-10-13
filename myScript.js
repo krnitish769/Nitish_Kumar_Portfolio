@@ -95,12 +95,12 @@ const triggerTopPx = 20;
     const originalNav = navMain.innerHTML;
     // new nav content for sticky mode
     const stickyNav = `
-    <li><a href="#homeDiv" class="nav-link active2">Home</a></li>
-    <li><a href="#aboutDiv" class="nav-link">About</a></li>
-    <li><a href="#resumeDiv" class="nav-link">Resume</a></li>
-    <li><a href="#projectsDiv" class="nav-link">Projects</a></li>
-    <li><a href="#blogsDiv" class="nav-link">Blogs</a></li>
-    <li><a href="#contactDiv" class="nav-link">Contact</a></li>
+    <li class="exception"><a href="#homeDiv" class="nav-link active2">Home</a></li>
+    <li class="exception"><a href="#aboutDiv" class="nav-link">About</a></li>
+    <li class="exception"><a href="#resumeDiv" class="nav-link">Resume</a></li>
+    <li class="exception"><a href="#projectsDiv" class="nav-link">Projects</a></li>
+    <li class="exception"><a href="#blogsDiv" class="nav-link">Blogs</a></li>
+    <li class="exception"><a href="#contactDiv" class="nav-link">Contact</a></li>
     <li style="width: 500px"><br></li>
     `;
 
@@ -313,3 +313,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ---------------------------------------------------------------
+// Form Details Sending as Email Codes
+// ---------------------------------------------------------------
+// ✅ Include this only if you’re not initializing EmailJS anywhere else
+// Initialize EmailJS with your public key
+(function() {
+    emailjs.init({
+        publicKey: "_SmxFeM8S-kjX5LoF"//"7N9GkSnYT6GnYAWfZ"  // Replace with your actual EmailJS Public Key
+    });
+})();
+
+// ✅ Attach event listener to your form
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+
+    if (!form) {
+        console.error("❌ Form with ID 'contactForm' not found!");
+        return;
+    }
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // ✅ Replace these with your actual EmailJS IDs
+        const serviceID = "service_gszwm0i";//"service_v6d3758";
+        const templateID = "template_li03woa";//"template_jbzwbvl";
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                alert("✅ Message sent successfully!");
+                form.reset();
+            })
+            .catch((error) => {
+                console.error("❌ EmailJS Error:", error);
+                alert("❌ Failed to send message. Check console for details.");
+            });
+    });
+});

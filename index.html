@@ -59,9 +59,9 @@
     <main>
         <nav id="navBar" class="navBar">
             <ul class="navMain">
-                <li><a href="#homeDiv" class="nav-link exception">Home</a></li>
-                <li><a href="#aboutDiv" class="nav-link exception">About</a></li>
-                <li><span id="resumeDivClicker" class="nav-link resumeButton">Resume</span></li>
+                <li class="exception"><a href="#homeDiv" class="nav-link">Home</a></li>
+                <li class="exception"><a href="#aboutDiv" class="nav-link">About</a></li>
+                <li class="exception"><span id="resumeDivClicker" class="nav-link resumeButton">Resume</span></li>
 
                 <li id="profilePicBox">
                     <a href="#">
@@ -69,9 +69,9 @@
                     </a>                    
                 </li>
 
-                <li><a href="#projectsDiv" class="nav-link exception">Projects</a></li>
-                <li><a href="#blogsDiv" class="nav-link exception">Blogs</a></li>
-                <li><a href="#contactDiv" class="nav-link exception">Contact</a></li>
+                <li class="exception"><a href="#projectsDiv" class="nav-link">Projects</a></li>
+                <li class="exception"><a href="#blogsDiv" class="nav-link">Blogs</a></li>
+                <li class="exception"><a href="#contactDiv" class="nav-link">Contact</a></li>
             </ul>
         </nav>
         
@@ -232,23 +232,23 @@
                         <h3>Social Links:</h3>
                         <nav id="socialIconsDiv">
                             <ul>
-                                <li class="socialIcon"><a href="tel: +916295544504">Mob - +91-6295544504</a></li>
-                                <li><a href="mailto: krnitish769@gmail.com">Email - krnitish769@gmail.com</a></li>
-                                <li><a href="#">GitHub - krnitish769</a></li>
-                                <li><a href="#">LinkedIn - krnitish769</a></li>
-                                <li><a href="#">Instagram - prabhu_769</a></li>
+                                <li class="socialIcon"><a href="tel: +916295544504" target="_blank">Mob - +91-6295544504</a></li>
+                                <li class="socialIcon"><a href="mailto: krnitish769@gmail.com" target="_blank">Email - krnitish769@gmail.com</a></li>
+                                <li class="socialIcon"><a href="https://github.com/krnitish769" target="_blank">GitHub - krnitish769</a></li>
+                                <li class="socialIcon"><a href="https://www.linkedin.com/in/krnitish769/" target="_blank">LinkedIn - krnitish769</a></li>
+                                <li class="socialIcon"><a href="https://www.instagram.com/prabhu_769/" target="_blank">Instagram - prabhu_769</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div id="contactRight">
                         <h3 class="headings">Leave Massage:</h3>
-                        <form action="/action_page.php" id="form">
+                        <form action="/action_page.php" id="contactForm">
                             <div id="name">
                                 <input type="text" id="fname" name="fname" placeholder="First Name">
                                 <input type="text" id="lname" name="lname" placeholder="Last Name">
                             </div>
-                            <input type="text" id="email" name="email" placeholder="Please Enter your Email Address">
-                            <textarea type="text" id="massage" name="massage" placeholder="Type your massage here.." rows="4"></textarea>
+                            <input type="email" id="email" name="email" placeholder="Please Enter your Email Address">
+                            <textarea type="text" id="message" name="message" placeholder="Type your massage here.." rows="4"></textarea>
                             <input type="submit" value="SUBMIT" id="submit">
                         </form>
                     </div>
@@ -268,6 +268,9 @@
     </footer>
 
     <!---Java Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="form.js"></script> <!-- your external JS file -->
+
     <script src="myScript.js"></script>
 
 </body>
