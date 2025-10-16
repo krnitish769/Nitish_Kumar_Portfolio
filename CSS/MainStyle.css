@@ -236,11 +236,19 @@ main {
     font-weight: 500;
   }
 
+/* About-Resume */
+#about-resume {
+    background-image: url("../Images/SectionBG/29.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* About */
 #aboutDiv {
     height: 60rem;
     width: 100%;
     display: block;
+    background-color: transparent;
 }
 .about {
     display: flex;
@@ -347,10 +355,9 @@ main {
 }
 
 /* Resume */
-
-/* #resumeDiv {
-    background-color: #ffea007e;
-} */
+#resumeDiv {
+    background-color: transparent;
+}
 .resumeHeadingBox {
     display: flex;
     justify-content: center;
@@ -359,10 +366,10 @@ main {
     width: 100%;
     margin-top: 0px;
     margin-bottom: 10px;
-    padding: 2rem 0rem 2rem;
+    padding: 6rem 0rem 3rem;
     cursor: pointer;
-    border-top:3px dashed black;
-    background-color: #E8630A;
+    border-top: 3px solid white;
+    /* border-bottom: 2px solid white; */
 
     p {
         color: white;
@@ -398,6 +405,8 @@ main {
 
     border: 4px solid black; /* width, style, color */
     border-radius: 15px;
+
+    cursor: pointer;
 }
 /* Bubble animation */
 @keyframes bubble {
@@ -414,7 +423,7 @@ main {
 .resumeBox {
     height: fit-content;
     width: 100%;
-    background-color: #ffea003d;
+    background-color: transparent;
     justify-content: center;
     padding: 10px 0px;
 
@@ -437,7 +446,9 @@ main {
 #projectsDiv {
     height: 350vh;
     width: 100%;
-    background-color: #ffa600e1;
+    background-image: url("../Images/SectionBG/32.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     display: block;
 }
 .projectContent {

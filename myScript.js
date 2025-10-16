@@ -91,31 +91,17 @@ let isSticky = false;
 let smallActive = false;
 const triggerTopPx = 20;
 
-    // store original nav content
-    const originalNav = navMain.innerHTML;
-    // new nav content for sticky mode
-    const stickyNav = `
-    <li class="exception"><a href="#homeDiv" class="nav-link active2">Home</a></li>
-    <li class="exception"><a href="#aboutDiv" class="nav-link">About</a></li>
-    <li class="exception"><a href="#resumeDiv" class="nav-link">Resume</a></li>
-    <li class="exception"><a href="#projectsDiv" class="nav-link">Projects</a></li>
-    <li class="exception"><a href="#blogsDiv" class="nav-link">Blogs</a></li>
-    <li class="exception"><a href="#contactDiv" class="nav-link">Contact</a></li>
-    <li style="width: 500px"><br></li>
-    `;
-
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
 
     // Sticky navbar
     if (scrollY > navOffsetTop + 10 && !isSticky) {
         navbar.classList.add("sticky");
-        navMain.innerHTML = stickyNav;
         navMain.appendChild(profilePicBox);
         isSticky = true;
     } else if (scrollY <= navOffsetTop + 10 && isSticky) {
         navbar.classList.remove("sticky");
-        navMain.innerHTML = originalNav;
+        navMain.insertBefore(profilePicBox, navMain.children[3]);
         isSticky = false;
     }
 
@@ -124,7 +110,6 @@ window.addEventListener("scroll", () => {
     if (picRect.top <= triggerTopPx && !smallActive) {
         
         profilePic.classList.add('shrinkToCorner');
-        navMain.innerHTML = stickyNav;
         navMain.appendChild(profilePicBox);
 
         void profilePic.offsetWidth; // force reflow
@@ -137,7 +122,6 @@ window.addEventListener("scroll", () => {
         smallActive = true;
     } else if (picRect.top > triggerTopPx && smallActive) {
         profilePic.classList.remove('shrinkToCorner');
-        navMain.innerHTML = originalNav;
         smallActive = false;
     }
 });
@@ -219,9 +203,8 @@ function typeWriterLoop() {
         }
     }, speed);
 }
+typeWriterLoop();// Start animation
 
-// Start animation
-typeWriterLoop();
 
 // ---------------------------------------------------------------
 // Quote Box Animation on Scroll
@@ -234,110 +217,89 @@ typeWriterLoop();
     }
   });
   
-//   ---------------------------------------------------------------
+
 // Resume Section Toggle Switch
-// -----------------------------------------------------------------
+const resumeBox = document.querySelector(".resumeBox");
+const headingBox = document.getElementById("resumeHeadingBox");
+const headingH2 = document.querySelector(".resumeHeading");
+const navSwitch = document.getElementById("resumeDivClicker");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navSwitch     = document.getElementById("resumeDivClicker");   // navbar control
-  const headingBox    = document.getElementById("resumeHeadingBox");   // clickable heading container
-  const headingH2     = document.querySelector(".resumeHeading");      // the H2 text
-  const resumeBox     = document.querySelector(".resumeBox");          // the collapsible content
-  const resumeSection = document.getElementById("resumeDiv");          // section to scroll to
-
-  // sanity check
-  if (!headingBox || !headingH2 || !resumeBox) {
-    console.error("Resume toggle elements missing:", {
-      headingBox, headingH2, resumeBox, navSwitch, resumeSection
-    });
-    return;
-  }
-
-  // Helper: show (idempotent)
-  function showResume() {
+function showResume() {
+    if (!resumeBox || !headingBox || !headingH2) return;
     resumeBox.classList.add("show");
     headingH2.textContent = "Resume ▲";
-    headingBox.classList.add("hide");   // ✅ fixed: use classList
+    headingBox.classList.add("hide");
     headingH2.classList.remove("bubble");
     headingBox.classList.remove("resumeHeadingBox");
     headingBox.classList.add("headingBox");
-  }
+}
 
-  // Helper: hide (idempotent)
-  function hideResume() {
+function hideResume() {
+    if (!resumeBox || !headingBox || !headingH2) return;
     resumeBox.classList.remove("show");
     headingH2.textContent = "Resume ▼";
-    headingBox.classList.remove("hide"); // remove hidden <p> when closed
+    headingBox.classList.remove("hide");
     headingH2.classList.add("bubble");
     headingBox.classList.remove("headingBox");
     headingBox.classList.add("resumeHeadingBox");
-  }
+}
 
-  // Toggle
-  function toggleResume() {
-    if (resumeBox.classList.contains("show")) {
-      hideResume();
-    } else {
-      showResume();
+// Delegated click listener
+document.addEventListener("click", (e) => {
+    // Heading click
+    if (e.target.closest(".resumeHeading")) {
+        if (resumeBox.classList.contains("show")) hideResume();
+        else showResume();
     }
-  }
 
-  // Initial state: make heading pulse if hidden
-  if (!resumeBox.classList.contains("show")) {
-    headingH2.classList.add("bubble");
-  }
+    // Navbar click
+    if (e.target.closest("#resumeDivClicker")) {
+        const resumeSection = document.getElementById("resumeDiv");
+        if (!resumeSection) return;
 
-  // Heading click toggles
-  headingBox.addEventListener("click", () => {
-    toggleResume();
-  });
-
-  // Nav click: scroll then open (idempotent)
-  if (navSwitch) {
-    navSwitch.addEventListener("click", (e) => {
-      e.preventDefault?.();
-
-      // Scroll to the section first
-      if (resumeSection) {
         resumeSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        headingBox.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-
-      // Delay so scroll happens first
-      setTimeout(() => {
-        showResume(); // always open from navbar
-      }, 150);
-    });
-  }
+        setTimeout(() => showResume(), 500);
+    }
 });
+
+
+
 
 // ---------------------------------------------------------------
 // Form Details Sending as Email Codes
 // ---------------------------------------------------------------
-// ✅ Include this only if you’re not initializing EmailJS anywhere else
 // Initialize EmailJS with your public key
 (function() {
     emailjs.init({
-        publicKey: "_SmxFeM8S-kjX5LoF"//"7N9GkSnYT6GnYAWfZ"  // Replace with your actual EmailJS Public Key
+        publicKey: "_SmxFeM8S-kjX5LoF" // "7N9GkSnYT6GnYAWfZ"  // Keep both if you switch later
     });
 })();
 
 // ✅ Attach event listener to your form
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
+    const messageInput = document.getElementById("message");
 
     if (!form) {
         console.error("❌ Form with ID 'contactForm' not found!");
         return;
     }
 
+    // ✅ Allow pressing Enter to submit (Shift+Enter still adds newline)
+    messageInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault(); // Prevents newline
+            form.requestSubmit(); // Triggers the form submit
+        }
+    });
+
+    // ✅ Handle normal form submission (EmailJS)
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        // ✅ Replace these with your actual EmailJS IDs
-        const serviceID = "service_gszwm0i";//"service_v6d3758";
-        const templateID = "template_li03woa";//"template_jbzwbvl";
+        // ✅ Keep your original IDs here
+        const serviceID = "service_gszwm0i"; // "service_v6d3758";
+        const templateID = "template_li03woa"; // "template_jbzwbvl";
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
@@ -350,3 +312,4 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     });
 });
+
