@@ -446,7 +446,7 @@ main {
 #projectsDiv {
     height: 350vh;
     width: 100%;
-    background-image: url("../Images/SectionBG/32.jpg");
+    background-image: url("../Images/SectionBG/6.jpg");
     background-size: cover;
     background-attachment: fixed;
     display: block;
@@ -463,10 +463,21 @@ main {
 .projectImage {
     height: 45vh;
     width: 45vh;
-    border-radius: 50%;
     transition: all 0.2s ease-in;
     border: 2px dotted white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.763);
+}
+.projectImageLeft,
+.projectContentLeft {
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    border-right: 2px solid white;
+}
+.projectImageRight,
+.projectContentRight {
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    border-left: 2px solid white;
 }
 .projectImage:hover {
     transform: scale(1.2);
@@ -484,13 +495,11 @@ main {
 }
 
 .projectTexts {
-    height: 40vh;
+    height: 42vh;
     width: 35vw;
     background-color: rgba(0, 0, 0, 0.589);
     color: white;
     padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -515,6 +524,7 @@ main {
 #blogsDiv {
     background-image: url("../Images/SectionBG/7.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 150vh;
     display: block;
 }
@@ -545,7 +555,7 @@ main {
     height: 20rem;
     width: 20rem;
     border: 3px solid black;
-    border-radius: 10%;
+    /* border-radius: 10%; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.763);
     display: flex;
     justify-content: right;
@@ -591,9 +601,10 @@ main {
 #contactDiv {
     color: white;
     height: 30rem;
-    background-image: url("../Images/SectionBG/Contact2.jpg");
+    background-image: url("../Images/SectionBG/Contact5.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;

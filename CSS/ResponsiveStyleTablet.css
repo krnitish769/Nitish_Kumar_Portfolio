@@ -1,0 +1,35 @@
+
+/* ==================================================================
+   RESPONSIVE DESIGN STYLESHEET
+   [LargeDisplays-1200px, Laptops-992px, Tablets-768px,
+   Phones(Landscape)-915px, Phones(Portrait)-600px]
+   ================================================================== */
+
+   /* ===================================================
+    For All devices upto 768px(Tablet Pixel)
+    =================================================== */
+@media (min-width: 0px) and (max-width: 991px){
+
+   /* ===== Utility: Smooth scaling transitions =====*/
+
+    * {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* ===== Base: Always keep fluid widths ===== */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img, iframe, video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ===================================================
+   Tablets (Portrait Mode): 786px width
+   =================================================== */
+@media (max-width: 786px) {
+}

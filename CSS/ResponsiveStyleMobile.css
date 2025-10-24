@@ -1,0 +1,89 @@
+/* ==================================================================
+   RESPONSIVE DESIGN STYLESHEET
+   [LargeDisplays-1200px, Laptops-992px, Tablets(Portrait)-768px,
+   Phones(Landscape)-915px, Phones(Portrait)-600px]
+   ================================================================== */
+
+/* ===================================================
+   Mobile Devices (Landscape): 915px width
+   =================================================== */
+@media (max-width: 915px) {  
+}
+
+/* ===================================================
+   Small Mobiles (Portrait): 768px width
+   =================================================== */
+@media (max-width: 600px) {
+
+    /* Header Style */
+    header{
+        height: 70vh;
+    }
+
+    .headerMainContainer ul {
+        display: flex;
+        justify-content: space-evenly;
+        li {
+            transform: scale(1.2);
+            margin: 5px 14px;
+        }
+    }
+    .socialIcons {
+        background-color: rgba(255, 255, 255, 0.215);
+    }
+    #headerContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 5rem;
+    }
+    #headerContentBox {
+        font-size: small;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+
+    .header-subtitle {
+        font-size: larger;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .header-title {
+        width: 80vw;
+    }
+
+    /* .headerMono{
+        display: block;
+        font-size: small;
+    }
+    .header-pipe {
+        display: none;
+    }
+    .header-mono2 {
+        margin: 2px 0px;
+    } */
+
+    /* .profilePicBoxResponsive {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    } */
+
+    #downloadResumeBox {
+        margin:5px 19px;
+        transform: scale(1.2);
+    }
+
+    /* Main Style */
+    #profilePicBox {
+        order: -1;
+    }
+    /* #profilePic {
+        border-radius: 5px;
+    } */
+
+    /* Footer Style */
+
+
+}
